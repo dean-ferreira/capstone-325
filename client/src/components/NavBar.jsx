@@ -13,9 +13,21 @@ function NavBar() {
                         States
                     </Link>
                 </li>
-                <li>Favorites</li>
-                <li>Orders</li>
-                <li>Account</li>
+                <li>
+                    <Link to="/favorites" className="header-link">
+                        Favorites
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/orders" className="header-link">
+                        Orders
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/account" className="header-link">
+                        Account
+                    </Link>
+                </li>
             </ul>
             <button className="header-bars">
                 <svg
