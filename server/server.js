@@ -18,6 +18,7 @@ const seedRouter = require('./routes/seed');
 const statesRouter = require('./routes/states');
 const favoritesRouter = require('./routes/favorites');
 const usersRouter = require('./routes/users');
+const ordersRouter = require('./routes/orders');
 
 // Middleware
 app.use(express.json());
@@ -27,8 +28,7 @@ app.use('/seed', seedRouter);
 app.use('/states', statesRouter);
 app.use('/fav', favoritesRouter);
 app.use('/users', usersRouter);
-
-// Routes
+app.use('/orders', ordersRouter);
 
 // Start server
 app.listen(PORT, () => {
