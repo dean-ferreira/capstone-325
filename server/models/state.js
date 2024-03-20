@@ -25,6 +25,9 @@ const stateSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    average: {
+        type: Number,
+    },
 });
 
 module.exports = mongoose.model('State', stateSchema);
