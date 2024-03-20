@@ -3,6 +3,12 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 
+// Import Models
+const State = require('./models/state');
+
+// Import data
+const STATES = require('./data/states');
+
 // Create express app
 const app = express();
 const PORT = process.env.PORT || 3000; // Set port
@@ -15,6 +21,13 @@ db.once('open', () => console.log('Connected to database'));
 
 // Middleware
 app.use(express.json());
+
+// Routes
+app.get('/seed', async (req, res) => {
+    await State.deleteMany({});
+    await State.create(STATES);
+    res.json({ message: 'Database seeded' });
+});
 
 // Start server
 app.listen(PORT, () => {
