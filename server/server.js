@@ -19,8 +19,14 @@ const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to database'));
 
+// Routers
+const statesRouter = require('./routes/states');
+
 // Middleware
 app.use(express.json());
+
+// Use routers
+app.use('/states', statesRouter);
 
 // Routes
 app.get('/seed', async (req, res) => {
