@@ -16,6 +16,7 @@ db.once('open', () => console.log('Connected to database'));
 // Routers
 const seedRouter = require('./routes/seed');
 const statesRouter = require('./routes/states');
+const favoritesRouter = require('./routes/favorites');
 
 // Middleware
 app.use(express.json());
@@ -23,6 +24,7 @@ app.use(express.json());
 // Use routers
 app.use('/seed', seedRouter);
 app.use('/states', statesRouter);
+app.use('/fav', favoritesRouter);
 
 // Routes
 
