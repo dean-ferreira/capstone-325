@@ -1,4 +1,4 @@
-@import "./styles/header.css";
+@import "./styles/NavBar.css";
 
 .container {
     width: 100%;
@@ -10,12 +10,14 @@
 
 .page-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: white;
     padding-top: 1em;
     padding-bottom: 1em;
+    gap: 1rem;
 }
 
 /* xs */
