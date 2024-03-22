@@ -2,6 +2,7 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // Create express app
 const app = express();
@@ -22,6 +23,7 @@ const ordersRouter = require('./routes/orders');
 
 // Middleware
 app.use(express.json());
+app.use(cors()); // Enable CORS for all requests
 
 // Use routers
 app.use('/seed', seedRouter);
