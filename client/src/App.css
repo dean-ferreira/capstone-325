@@ -1,4 +1,5 @@
 @import "./styles/NavBar.css";
+@import "./styles/StateTile.css";
 @import "./styles/FuelOption.css";
 
 .container {
