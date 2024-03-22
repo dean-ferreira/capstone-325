@@ -60,7 +60,7 @@ const states = [
         diesel: '4.392',
         gasoline: '3.617',
         midGrade: '4.167',
-        name: 'District of Columbia',
+        name: 'District-of-Columbia',
         premium: '4.555',
     },
     {
@@ -220,7 +220,7 @@ const states = [
         diesel: '3.991',
         gasoline: '3.318',
         midGrade: '3.711',
-        name: 'North Carolina',
+        name: 'North-Carolina',
         premium: '4.086',
     },
     {
@@ -228,7 +228,7 @@ const states = [
         diesel: '3.821',
         gasoline: '3.304',
         midGrade: '3.581',
-        name: 'North Dakota',
+        name: 'North-Dakota',
         premium: '3.958',
     },
     {
@@ -244,7 +244,7 @@ const states = [
         diesel: '4.169',
         gasoline: '3.188',
         midGrade: '3.635',
-        name: 'New Hampshire',
+        name: 'New-Hampshire',
         premium: '4.057',
     },
     {
@@ -252,7 +252,7 @@ const states = [
         diesel: '4.021',
         gasoline: '3.261',
         midGrade: '3.786',
-        name: 'New Jersey',
+        name: 'New-Jersey',
         premium: '4.058',
     },
     {
@@ -260,7 +260,7 @@ const states = [
         diesel: '3.814',
         gasoline: '3.251',
         midGrade: '3.613',
-        name: 'New Mexico',
+        name: 'New-Mexico',
         premium: '3.896',
     },
     {
@@ -276,7 +276,7 @@ const states = [
         diesel: '4.386',
         gasoline: '3.369',
         midGrade: '3.854',
-        name: 'New York',
+        name: 'New-York',
         premium: '4.237',
     },
     {
@@ -316,7 +316,7 @@ const states = [
         diesel: '4.245',
         gasoline: '3.218',
         midGrade: '3.817',
-        name: 'Rhode Island',
+        name: 'Rhode-Island',
         premium: '4.174',
     },
     {
@@ -324,7 +324,7 @@ const states = [
         diesel: '3.848',
         gasoline: '3.236',
         midGrade: '3.640',
-        name: 'South Carolina',
+        name: 'South-Carolina',
         premium: '3.997',
     },
     {
@@ -332,7 +332,7 @@ const states = [
         diesel: '3.707',
         gasoline: '3.220',
         midGrade: '3.389',
-        name: 'South Dakota',
+        name: 'South-Dakota',
         premium: '3.846',
     },
     {
@@ -396,7 +396,7 @@ const states = [
         diesel: '3.973',
         gasoline: '3.276',
         midGrade: '3.661',
-        name: 'West Virginia',
+        name: 'West-Virginia',
         premium: '4.019',
     },
     {
