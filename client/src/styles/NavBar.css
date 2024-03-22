@@ -2,8 +2,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
 }
 
 .header-menu {
