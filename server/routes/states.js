@@ -12,6 +12,26 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Get a State by ID
+router.get('/:id', getState, (req, res) => {
+    res.json(res.state);
+});
+
+// Middleware to get a state by ID
+async function getState(req, res, next) {
+    let state;
+    try {
+        state = await State.findById(req.params.id);
+        if (state == null) {
+            return res.status(404).json({ message: 'State not found' });
+        }
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+    res.state = state;
+    next();
+}
+
 // Get x number of states with the lowest average price
 router.get('/lowest/:num', async (req, res) => {
     try {
