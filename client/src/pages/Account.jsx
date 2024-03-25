@@ -41,8 +41,9 @@ function Account() {
     const loaded = () => {
         return (
             <div className="container page-content">
-                <h2>My Account</h2>
+                <h2 className="content-title">My Account</h2>
                 <form
+                    className="container page-content"
                     action={`http://localhost:3000/users/${userID}?_method=PATCH`}
                     method="POST"
                     onSubmit={handleSubmit}
