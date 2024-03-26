@@ -12,6 +12,7 @@ import AllStates from './pages/AllStates';
 import Favorites from './pages/Favorites';
 import Orders from './pages/Orders';
 import Account from './pages/Account';
+import ConfirmOrder from './pages/ConfirmOrder';
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/favorites" element={<Favorites />} />
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/account" element={<Account />} />
+                <Route path="/confirm" element={<ConfirmOrder />} />
             </Routes>
         </>
     );

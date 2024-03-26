@@ -87,21 +87,29 @@ function Favorites() {
                             <h2 className="state-name">{state.name}</h2>
                             <div className="fuel-selection">
                                 <FuelOption
+                                    user_id={user._id}
+                                    stateName={state.name}
                                     name="Regular"
                                     price={state.gasoline}
                                     grade="87"
                                 />
                                 <FuelOption
+                                    user_id={user._id}
+                                    stateName={state.name}
                                     name="Mid-Grade"
                                     price={state.midGrade}
                                     grade="89"
                                 />
                                 <FuelOption
+                                    user_id={user._id}
+                                    stateName={state.name}
                                     name="Premium"
                                     price={state.premium}
                                     grade="91"
                                 />
                                 <FuelOption
+                                    user_id={user._id}
+                                    stateName={state.name}
                                     name="Diesel"
                                     price={state.diesel}
                                     grade="Diesel"

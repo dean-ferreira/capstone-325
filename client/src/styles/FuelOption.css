@@ -44,11 +44,12 @@
 .grade-button {
     background-color: #ffcc00;
     border-radius: 10px;
-    font-size: 1em;
+    font-size: 1.4em;
     cursor: pointer;
     width: 5rem;
     height: 2rem;
-    pointer-events: none;
+    color: black;
+    text-decoration: none;
 }
 
 .grade-button:active {

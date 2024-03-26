@@ -1,6 +1,8 @@
 @import "./styles/NavBar.css";
 @import "./styles/StateTile.css";
 @import "./styles/FuelOption.css";
+@import "./styles/OrderForm.css";
+@import "./styles/OrderHistoryTable.css";
 
 .container {
     width: 100%;
