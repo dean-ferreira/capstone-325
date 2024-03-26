@@ -52,6 +52,6 @@
     text-decoration: none;
 }
 
-.grade-button:active {
+.grade-button:hover {
     background-color: #e6b800;
 }
