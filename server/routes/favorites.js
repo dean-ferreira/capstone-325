@@ -38,10 +38,10 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Delete a Favorite
+// Delete a Favorite by State ID
 router.delete('/:id', async (req, res) => {
     try {
-        await Favorite.findByIdAndDelete(req.params.id);
+        await Favorite.findOneAndDelete({ state_id: req.params.id });
         res.json({ message: 'Favorite has been deleted' });
     } catch (error) {
         res.status(500).json({ message: error.message });
