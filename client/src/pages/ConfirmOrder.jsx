@@ -18,7 +18,7 @@ function ConfirmOrder() {
             stateName: stateName || '',
             product: product || '',
             price: price || '',
-            gallons: 0,
+            gallons: 1,
         });
     }, []);
 
@@ -83,6 +83,7 @@ function ConfirmOrder() {
                         <input
                             type="number"
                             required
+                            min="1"
                             value={formData.gallons}
                             onChange={(e) =>
                                 setFormData({
