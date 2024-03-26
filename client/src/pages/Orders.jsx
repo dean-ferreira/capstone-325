@@ -33,14 +33,16 @@ function Orders() {
         getUser();
     }, []);
 
-    const loaded = () => {
-        if (orders.length === 0) {
-            return (
-                <div className="container page-content">
-                    <h2 className="content-title">No orders found</h2>;
-                </div>
-            );
+    async function deleteOrder(orderID) {
+        try {
+            await axios.delete(`http://localhost:3000/orders/${orderID}`);
+            getOrders(user._id);
+        } catch (error) {
+            console.error(error);
         }
+    }
+
+    const loaded = () => {
         return (
             <div className="container page-content">
                 <h2 className="content-title">My Orders</h2>
@@ -53,6 +55,7 @@ function Orders() {
                             <th>Price</th>
                             <th>Gallons</th>
                             <th>Total</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -66,10 +69,19 @@ function Orders() {
                                 <td>${order.price}</td>
                                 <td>{order.quantity}</td>
                                 <td>${order.total}</td>
+                                <td>
+                                    <button
+                                        onClick={() => deleteOrder(order._id)}
+                                    >
+                                        Delete
+                                    </button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
+
+                {orders.length === 0 && <h3>No orders found</h3>}
             </div>
         );
     };
