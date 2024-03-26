@@ -13,6 +13,8 @@ import Favorites from './pages/Favorites';
 import Orders from './pages/Orders';
 import Account from './pages/Account';
 import ConfirmOrder from './pages/ConfirmOrder';
+import StateDirectory from './pages/StateDirectory';
+import State from './pages/State';
 
 function App() {
     return (
@@ -25,6 +27,8 @@ function App() {
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/account" element={<Account />} />
                 <Route path="/confirm" element={<ConfirmOrder />} />
+                <Route path="/directory" element={<StateDirectory />} />
+                <Route path="/states/:id" element={<State />} />
             </Routes>
         </>
     );

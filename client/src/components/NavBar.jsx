@@ -9,7 +9,7 @@ function NavBar() {
             </Link>
             <ul className="header-menu">
                 <li>
-                    <Link to="/states" className="header-link">
+                    <Link to="/directory" className="header-link">
                         States
                     </Link>
                 </li>
