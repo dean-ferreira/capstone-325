@@ -1,5 +1,5 @@
 // Import components
-import StateTile from '../components/StateTile';
+import FuelOption from '../components/FuelOption';
 
 // Import hooks
 import { useState, useEffect } from 'react';
@@ -16,9 +16,7 @@ function Favorites() {
         try {
             const response = await axios.get('http://localhost:3000/users/');
             setUser(response.data[0]);
-
             getFavorites(response.data[0]._id);
-
             getStates();
         } catch (error) {
             console.error(error);
@@ -45,6 +43,19 @@ function Favorites() {
         }
     }
 
+    async function removeFromFavorites(favoriteID) {
+        try {
+            const response = await axios.delete(
+                `http://localhost:3000/fav/${favoriteID}`
+            );
+            setFavorites(
+                favorites.filter((favorite) => favorite.state_id !== favoriteID)
+            );
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     useEffect(() => {
         getUser();
     }, []);
@@ -57,10 +68,53 @@ function Favorites() {
             );
         });
 
+        if (favStates.length === 0) {
+            if (favStates.length === 0) {
+                return (
+                    <div className="container page-content">
+                        <h2 className="content-title">No favorites yet!</h2>
+                    </div>
+                );
+            }
+        }
+
         return (
             <div className="container page-content">
                 <h2 className="content-title">My Favorites</h2>
-                <StateTile statePrices={favStates} />
+                <div className="container page-content">
+                    {favStates.map((state, index) => (
+                        <div key={index} className="state-tile">
+                            <h2 className="state-name">{state.name}</h2>
+                            <div className="fuel-selection">
+                                <FuelOption
+                                    name="Regular"
+                                    price={state.gasoline}
+                                    grade="87"
+                                />
+                                <FuelOption
+                                    name="Mid-Grade"
+                                    price={state.midGrade}
+                                    grade="89"
+                                />
+                                <FuelOption
+                                    name="Premium"
+                                    price={state.premium}
+                                    grade="91"
+                                />
+                                <FuelOption
+                                    name="Diesel"
+                                    price={state.diesel}
+                                    grade="Diesel"
+                                />
+                            </div>
+                            <button
+                                onClick={() => removeFromFavorites(state._id)}
+                            >
+                                Remove from Favorites
+                            </button>
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     };
