@@ -10,6 +10,10 @@ const orderSchema = new mongoose.Schema({
         ref: 'User',
         required: true,
     },
+    state: {
+        type: String,
+        required: true,
+    },
     product: {
         type: String,
         required: true,

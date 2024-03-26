@@ -27,6 +27,7 @@ router.post('/', async (req, res) => {
     const order = new Order({
         date: Date.now(),
         user_id: req.body.user_id,
+        state: req.body.state,
         product: req.body.product,
         price: req.body.price,
         quantity: req.body.quantity,
