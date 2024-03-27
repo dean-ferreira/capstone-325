@@ -1,0 +1,19 @@
+.directory {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+.directory-item {
+    display: flex;
+    margin-top: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.directory-item:hover {
+    text-decoration: underline;
+}
