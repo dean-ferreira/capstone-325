@@ -24,6 +24,13 @@ function ConfirmOrder() {
 
     async function handleSubmission(event) {
         event.preventDefault();
+
+        // Prevent submission if cancel button is clicked
+        if (event.target.className === 'cancel-order') {
+            window.location.href = '/';
+            return;
+        }
+
         const data = {
             user_id: formData.user_id,
             state: formData.stateName,
