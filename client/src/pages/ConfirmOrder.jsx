@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 // Import axios
 import axios from 'axios';
 
+// Import Link
+import { Link } from 'react-router-dom';
+
 function ConfirmOrder() {
     const [formData, setFormData] = useState({});
 
@@ -111,12 +114,9 @@ function ConfirmOrder() {
                     <button className="submit-order" type="submit">
                         Submit Order
                     </button>
-                    <button
-                        className="cancel-order"
-                        onClick={() => (window.location.href = '/')}
-                    >
+                    <Link to="/" className="cancel-order">
                         Cancel
-                    </button>
+                    </Link>
                 </form>
             </div>
         </div>
