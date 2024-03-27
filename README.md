@@ -47,7 +47,7 @@ Create a full-stack web application using MongoDB, Express, React, and Node (MER
     git clone https://github.com/dean-ferreira/capstone-325.git
     cd capstone-325
     ```
-2. Install NPM packages for client and server (find instructions in respective README's)
+2. Install NPM packages for [client](https://github.com/dean-ferreira/capstone-325/tree/main/client) and [server](https://github.com/dean-ferreira/capstone-325/tree/main/server) (find instructions in respective README's)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
