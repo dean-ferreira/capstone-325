@@ -38,9 +38,11 @@
     ```sh
     npm install
     ```
-3. Configure .env file
+3. Get an API Key at https://collectapi.com/api/gasPrice/gas-prices-api
+4. Configure .env file
     ```sh
     DATABASE_URL=your_database_url
+    API_KEY=apikey your_api_key
     ```
 
 ## Usage
@@ -64,6 +66,9 @@
     - GET `/`
         - Retrieve all states
         - Read Operation
+    - GET `/:id`
+        - Retrieve state by id
+        - Read Operation
     - GET `/lowest/:num`
         - Retrieve x number of states with the lowest average price
         - Read Operation
@@ -81,7 +86,7 @@
         - Create a favorite
         - Create Operation
     - DELETE `/:id`
-        - Delete a favorite by id
+        - Delete a favorite by state id
         - Delete Operation
 4. `/users`
     - GET `/`
@@ -97,12 +102,12 @@
         - Update user by id
         - Update Operation
     - DELETE `/:id` - Delete user by id - Delete operation
-5. `/fav`
+5. `/orders`
     - GET `/`
         - Retrieve all orders
         - Read Operation
     - GET `/user/:id`
-        - Retrieve order by user id
+        - Retrieve orders by user id
         - Read Operation
     - POST `/`
         - Create an order
