@@ -10,7 +10,9 @@ function Orders() {
 
     async function getUser() {
         try {
-            const response = await axios.get('http://localhost:3000/users/');
+            const response = await axios.get(
+                'https://capstone-325-api.onrender.com/users/'
+            );
             setUser(response.data[0]);
             getOrders(response.data[0]._id);
         } catch (error) {
@@ -21,7 +23,7 @@ function Orders() {
     async function getOrders(userID) {
         try {
             const response = await axios.get(
-                `http://localhost:3000/orders/user/${userID}`
+                `https://capstone-325-api.onrender.com/orders/user/${userID}`
             );
             setOrders(response.data);
         } catch (error) {
@@ -35,7 +37,9 @@ function Orders() {
 
     async function deleteOrder(orderID) {
         try {
-            await axios.delete(`http://localhost:3000/orders/${orderID}`);
+            await axios.delete(
+                `https://capstone-325-api.onrender.com/orders/${orderID}`
+            );
             getOrders(user._id);
         } catch (error) {
             console.error(error);

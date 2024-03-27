@@ -15,7 +15,9 @@ function StateDirectory() {
 
     async function getStates() {
         try {
-            const response = await axios.get('http://localhost:3000/states');
+            const response = await axios.get(
+                'https://capstone-325-api.onrender.com/states'
+            );
             setStates(response.data);
         } catch (error) {
             console.error(error);

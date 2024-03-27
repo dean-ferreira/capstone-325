@@ -14,7 +14,9 @@ function Favorites() {
 
     async function getUser() {
         try {
-            const response = await axios.get('http://localhost:3000/users/');
+            const response = await axios.get(
+                'https://capstone-325-api.onrender.com/users/'
+            );
             setUser(response.data[0]);
             getFavorites(response.data[0]._id);
             getStates();
@@ -26,7 +28,7 @@ function Favorites() {
     async function getFavorites(userID) {
         try {
             const response = await axios.get(
-                `http://localhost:3000/fav/user/${userID}`
+                `https://capstone-325-api.onrender.com/fav/user/${userID}`
             );
             setFavorites(response.data);
         } catch (error) {
@@ -36,7 +38,9 @@ function Favorites() {
 
     async function getStates() {
         try {
-            const response = await axios.get('http://localhost:3000/states');
+            const response = await axios.get(
+                'https://capstone-325-api.onrender.com/states'
+            );
             setStates(response.data);
         } catch (error) {
             console.error(error);
@@ -46,7 +50,7 @@ function Favorites() {
     async function removeFromFavorites(favoriteID) {
         try {
             const response = await axios.delete(
-                `http://localhost:3000/fav/${favoriteID}`
+                `https://capstone-325-api.onrender.com/fav/${favoriteID}`
             );
             setFavorites(
                 favorites.filter((favorite) => favorite.state_id !== favoriteID)

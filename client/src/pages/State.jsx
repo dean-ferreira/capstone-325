@@ -18,7 +18,9 @@ function State() {
 
     async function getUser() {
         try {
-            const response = await axios.get('http://localhost:3000/users/');
+            const response = await axios.get(
+                'https://capstone-325-api.onrender.com/users/'
+            );
             setUser(response.data[0]);
             getFavorites(response.data[0]._id);
         } catch (error) {
@@ -29,7 +31,7 @@ function State() {
     async function getFavorites(userID) {
         try {
             const response = await axios.get(
-                `http://localhost:3000/fav/user/${userID}`
+                `https://capstone-325-api.onrender.com/fav/user/${userID}`
             );
             setFavorites(response.data);
         } catch (error) {
@@ -39,10 +41,13 @@ function State() {
 
     async function addToFavorites(stateID) {
         try {
-            const response = await axios.post('http://localhost:3000/fav', {
-                state_id: stateID,
-                user_id: user._id,
-            });
+            const response = await axios.post(
+                'https://capstone-325-api.onrender.com/fav',
+                {
+                    state_id: stateID,
+                    user_id: user._id,
+                }
+            );
             setFavorites([...favorites, response.data]);
         } catch (error) {
             console.error(error);
@@ -52,7 +57,7 @@ function State() {
     async function removeFromFavorites(favoriteID) {
         try {
             const response = await axios.delete(
-                `http://localhost:3000/fav/${favoriteID}`
+                `https://capstone-325-api.onrender.com/fav/${favoriteID}`
             );
             setFavorites(
                 favorites.filter((favorite) => favorite.state_id !== favoriteID)
@@ -69,7 +74,7 @@ function State() {
     async function getState() {
         try {
             const response = await axios.get(
-                `http://localhost:3000/states/${id}`
+                `https://capstone-325-api.onrender.com/states/${id}`
             );
             setState(response.data);
         } catch (error) {

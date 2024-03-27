@@ -35,7 +35,7 @@ function ConfirmOrder() {
 
         try {
             const response = await axios.post(
-                'http://localhost:3000/orders/',
+                'https://capstone-325-api.onrender.com/orders/',
                 data
             );
             console.log(response.data);

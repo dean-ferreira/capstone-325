@@ -7,7 +7,7 @@ function FavoriteState(props) {
     async function removeFromFavorites(favoriteID) {
         try {
             const response = await axios.delete(
-                `http://localhost:3000/fav/${favoriteID}`
+                `https://capstone-325-api.onrender.com/fav/${favoriteID}`
             );
             console.log(response.data);
             setFavorites(
