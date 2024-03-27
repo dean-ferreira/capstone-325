@@ -11,7 +11,9 @@ function Account() {
 
     async function getUser() {
         try {
-            const response = await axios.get('http://localhost:3000/users/');
+            const response = await axios.get(
+                'https://capstone-325-api.onrender.com/users/'
+            );
             const userData = response.data[0];
             setUserID(userData._id);
             setName(userData.name);
@@ -28,10 +30,13 @@ function Account() {
     async function handleSubmit(event) {
         event.preventDefault();
         try {
-            await axios.patch(`http://localhost:3000/users/${userID}`, {
-                name: userName,
-                email: userEmail,
-            });
+            await axios.patch(
+                `https://capstone-325-api.onrender.com/users/${userID}`,
+                {
+                    name: userName,
+                    email: userEmail,
+                }
+            );
             console.log('User profile updated successfully');
         } catch (error) {
             console.error('Error updating user profile:', error);
@@ -44,7 +49,7 @@ function Account() {
                 <h2 className="content-title">My Account</h2>
                 <form
                     className="container page-content"
-                    action={`http://localhost:3000/users/${userID}?_method=PATCH`}
+                    action={`https://capstone-325-api.onrender.com/users/${userID}?_method=PATCH`}
                     method="POST"
                     onSubmit={handleSubmit}
                 >

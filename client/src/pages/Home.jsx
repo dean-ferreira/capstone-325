@@ -13,7 +13,7 @@ function Main() {
     async function getStates() {
         try {
             const response = await axios.get(
-                'http://localhost:3000/states/lowest/3'
+                'https://capstone-325-api.onrender.com/states/lowest/3'
             );
             setStates(response.data);
         } catch (error) {
