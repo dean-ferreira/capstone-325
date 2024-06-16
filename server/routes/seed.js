@@ -48,7 +48,7 @@ async function getStatesInformation() {
 router.get('/', async (req, res) => {
     await State.deleteMany({});
     const info = await getStatesInformation();
-    await State.create(addAverage(info));
+    await State.create(addAverage(STATES));
 
     await User.deleteMany({});
     await User.create(USERS);
